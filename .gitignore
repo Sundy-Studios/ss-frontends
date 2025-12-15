@@ -41,3 +41,5 @@ yarn-error.log*
 next-env.d.ts
 
 firebase/config.ts
+*storybook.log
+storybook-static
