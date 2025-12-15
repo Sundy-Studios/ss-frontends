@@ -6,7 +6,7 @@ import { Box, Button, Typography, Stack } from "@mui/material";
 import { useAuth } from "@/firebase/auth";
 import Loading from "@/components/Loading";
 import ErrorMessage from "@/components/ErrorMessage";
-import EmptyState from "@/components/EmptyState";
+import EmptyState from "@/components/emptyState";
 import { useDeleteItem, useGetItemById } from "@/hooks/useCrud";
 
 export default function ItemPage() {

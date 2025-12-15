@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Providers from "./providers";
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/navbar";
 import { buildMetadata } from "@/lib/seo";
 import PageContainer from "@/components/PageContainer";
 
