@@ -3,9 +3,19 @@ It also incudes a [Next.js](https://nextjs.org) project bootstrapped with [`crea
 
 ## Getting Started
 
-Create config.ts at /firebase/config.ts
+# ss-frontends
 
-If you don't already have firebase setup, do so now. The config should look like this
+A Next.js frontend demonstrating user management and protected routes using Firebase Authentication. Built with Next.js 16 and React 19, plus Storybook for UI components.
+
+## Quick start
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Add your Firebase configuration (see next section).
 
 ```typescript
 export const firebaseConfig = {
@@ -19,35 +29,80 @@ export const firebaseConfig = {
 };
 ```
 
-Next, Install packages:
-
-```bash
-npm install
-```
-
-Then, run the development server:
+3. Run the dev server:
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser — the app runs on port 3000 by default.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Firebase configuration
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project expects a Firebase configuration object. Create or update `firebase/config.ts` (or set up your preferred env approach). Example content:
 
-## Learn More
+```typescript
+export const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID",
+  measurementId: "YOUR_MEASUREMENT_ID",
+};
+```
 
-To learn more about Next.js, take a look at the following resources:
+- The app loads Firebase from `firebase/config.ts` and initializes auth in `firebase/auth.ts`.
+- Do not commit sensitive keys to public repos; prefer environment variables or a private secrets manager for production.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `npm run dev` — run the Next.js development server (localhost:3000)
+- `npm run build` — build for production
+- `npm run start` — start the production server
+- `npm run lint` — run ESLint
+- `npm run storybook` — run Storybook (port 6006)
+- `npm run build-storybook` — build Storybook static site
+- `npm test` — runs the basic test script (see `package.json`)
 
-## Deploy on Vercel
+## Tests
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This repo currently doesn't include a full test suite. A placeholder `test` script exists so you can wire up your preferred test runner (Vitest, Jest, React Testing Library) later:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm test
+```
+
+Suggested next steps for tests:
+
+- Add `vitest` or `jest` and a small component/unit test to verify tooling.
+- Integrate `@storybook/addon-vitest` for component tests alongside Storybook.
+
+## Storybook
+
+Storybook is configured. Run it with:
+
+```bash
+npm run storybook
+```
+
+## Useful notes
+
+- Main app entry: `app/page.tsx`
+- Protected routes/components live in `components/ProtectedRoute` and `components/PublicRoute`.
+- Firebase helpers: see `firebase/auth.ts` and `firebase/config.ts`.
+- API helpers: `api/axios.ts` and `lib/fetcher.ts`.
+
+## Contributing
+
+1. Fork the repo and create a branch for your feature.
+2. Open a pull request with a clear description.
+
+## License
+
+This project does not include a license file. Add one if you plan to open-source it.
+
+---
+
+If you'd like, I can add an example test, wire up Vitest, or set up an `.env.example` and a `.gitignore` entry for local Firebase configs. Which would you prefer next?
