@@ -1,8 +1,8 @@
-import React from 'react';
-import Loading from '.';
+import React from "react";
+import Loading from ".";
 
 export default {
-  title: 'Components/Loading',
+  title: "Components/Loading",
   component: Loading,
 };
 

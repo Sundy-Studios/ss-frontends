@@ -1,8 +1,8 @@
-import React from 'react';
-import ErrorMessage from '.';
+import React from "react";
+import ErrorMessage from ".";
 
 export default {
-  title: 'Components/ErrorMessage',
+  title: "Components/ErrorMessage",
   component: ErrorMessage,
 };
 

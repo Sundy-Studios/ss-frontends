@@ -1,13 +1,16 @@
-import React from 'react';
+import React from "react";
 
 export default {
-  title: 'Components/ProtectedRoute',
+  title: "Components/ProtectedRoute",
 };
 
 export const RequiresLogin = () => (
   <div style={{ padding: 16 }}>
     <h3>Protected Content</h3>
-    <p>If the user is not authenticated they would be redirected to the login page.</p>
+    <p>
+      If the user is not authenticated they would be redirected to the login
+      page.
+    </p>
   </div>
 );
 

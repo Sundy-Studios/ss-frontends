@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 export default {
-  title: 'Components/PublicRoute',
+  title: "Components/PublicRoute",
 };
 
 export const LoggedOut = () => (
@@ -14,6 +14,8 @@ export const LoggedOut = () => (
 export const RedirectedWhenLoggedIn = () => (
   <div style={{ padding: 16 }}>
     <h3>Redirected</h3>
-    <p>If the user is authenticated they would be redirected away from this page.</p>
+    <p>
+      If the user is authenticated they would be redirected away from this page.
+    </p>
   </div>
 );
